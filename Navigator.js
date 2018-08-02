@@ -5,6 +5,7 @@ import Me from './src/component/me/Me';
 import Weather from './src/component/weather/QueryWether';
 import Header from './src/widgets/header/Header';
 import Login from './src/component/login/Login';
+import Camera from './src/widgets/camera/Camera';
 
 const Main = createBottomTabNavigator({
     Home: {
@@ -15,6 +16,9 @@ const Main = createBottomTabNavigator({
     },
     Weather: {
       screen: Weather
+    },
+    Camera: {
+      screen: Camera
     }
   },
 
