@@ -5,7 +5,8 @@ import Me from './src/component/me/Me';
 import Weather from './src/component/weather/QueryWether';
 import Header from './src/widgets/header/Header';
 import Login from './src/component/login/Login';
-import Camera from './src/widgets/camera/Camera';
+import Camera from './src/widgets/camera/CameraWidget';
+import Scanner from './src/widgets/camera/Scanner';
 
 const Main = createBottomTabNavigator({
     Home: {
@@ -16,9 +17,6 @@ const Main = createBottomTabNavigator({
     },
     Weather: {
       screen: Weather
-    },
-    Camera: {
-      screen: Camera
     }
   },
 
@@ -38,7 +36,9 @@ const Main = createBottomTabNavigator({
 export default createStackNavigator(
   {
     Home: Main,
-    Login: Login
+    Login: Login,
+    Camera,
+    Scanner
   },
   {
     initialRouteName: 'Home',

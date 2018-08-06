@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import Camera from 'react-native-camera';
 
-class CameraWidget extends Component {
+export default class CameraWidget extends Component {
   //构造函数
   constructor(props) {
     super(props);

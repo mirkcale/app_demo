@@ -15,10 +15,13 @@ export default class Home extends React.Component {
     navigate('Me', {name: 'miracle'})
   }
   render() {
+    const { navigate } = this.props.navigation;
     return(
       <View>
         <Text>home page</Text>
         <Button onPress={()=>this.navigatorToMe()} title='跳转到Me' />
+
+        <Button onPress={()=> navigate('Scanner')} title={'去拍照'} />
       </View>
     )
   }
