@@ -27,7 +27,7 @@ export default class Home extends React.Component {
   nav () {
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        var initialPosition = JSON.stringify(position);
+        let initialPosition = JSON.stringify(position);
         this.setState({initialPosition});
         console.log(initialPosition);
       },

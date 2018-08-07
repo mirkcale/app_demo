@@ -7,6 +7,7 @@ import Header from './src/widgets/header/Header';
 import Login from './src/component/login/Login';
 import Camera from './src/widgets/camera/CameraWidget';
 import Scanner from './src/widgets/camera/Scanner';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Main = createBottomTabNavigator({
     Home: {
@@ -24,7 +25,15 @@ const Main = createBottomTabNavigator({
     initialRouteName: 'Weather',
     navigationOptions: ({ navigation }) => ({
       header: Header,
-      tabBarIcon: ''
+      tabBarIcon: ({ focused, tintColor }) => {
+        console.log(navigation);
+        const { routeName } = navigation.state;
+        let iconName = `ios-information-circle${focused ? '' : '-outline'}`;
+
+        // You can return any component that you like here! We usually use an
+        // icon component from react-native-vector-icons
+        return <Ionicons name={iconName} size={25} color={tintColor} />;
+      }
     }),
 
     tabBarOptions: {
@@ -43,14 +52,16 @@ export default createStackNavigator(
   {
     initialRouteName: 'Home',
     /* The header config from HomeScreen is now here */
-    navigationOptions: {
-      headerStyle: {
-        backgroundColor: '#f4511e',
+    navigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({ focused, tintColor }) => {
+        console.log(navigation);
+        const { routeName } = navigation.state;
+        let iconName = `ios-information-circle${focused ? '' : '-outline'}`;
+
+        // You can return any component that you like here! We usually use an
+        // icon component from react-native-vector-icons
+        return <Ionicons name={iconName} size={25} color={tintColor} />;
       },
-      headerTintColor: '#fff',
-      headerTitleStyle: {
-        fontWeight: 'bold',
-      },
-    },
+    }),
   }
 )
